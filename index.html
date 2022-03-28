@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="startpage">
+            <h2>This quiz will test your knowledge of html and css concepts</h2>
+        <button id="startbtn">Start Coding Quiz</button>
+        <button id="HighscorePage" onclick="showHighscore()">High Scores</button>
+        </div>
+
+        <div id="quiz">
+            <div id="timer">Time left: </div>
+                <div id="questions"><p>Placeholder for questions</p></div>
+                    <button id="first" onclick="confirmAnswer('a')">A</button>
+                    <button id="second" onclick="confirmAnswer('b')">B</button>
+                    <button id="third" onclick="confirmAnswer('c')">C</button>
+                    <button id="fourth" onclick="confirmAnswer('d')">D</button>
+                <div id="result"></div>
+        </div>
+        <div id="gameover">
+            <div id="finalScore"></div>
+            <input type="text" size = "36" placeholder="Add your name for the highscore" name="name" id="name"/>
+            <button id="submitScore">Submit Score</button>
+        </div>
+        <div id=highscoreContainer>
+        <div id="high-scorePage">
+            <div id="highscore-header">
+                <h3>User Name</h3>
+                <h3>Score</h3>
+            </div>
+            <div id = "highscore-name"></div>
+            <div id = "highscore-score"></div>
+        </div>
+        <div id="endGameBtns">
+            <button id="playAgain" onclick="replayQuiz()">Play Again</button>
+            <button id="clearHighscore" onclick="clearoutScore()">Clear Highscores</button>
+        </div>
+    </div>
+    </div>
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/score.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
