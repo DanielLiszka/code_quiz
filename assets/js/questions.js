@@ -21,7 +21,7 @@ var quizQuestions = [{
     choiceD: "css",
     correctAnswer: "b"},
     {
-    question: "Commonly Used data types do not include:?",
+    question: "Commonly used data types do not include:?",
     choiceA: "alerts",
     choiceB: "numbers",
     choiceC: "strings",

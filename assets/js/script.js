@@ -73,7 +73,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
     
     HighScoresStored.push(currentHighscore);
     localStorage.setItem("HighScoresStored", JSON.stringify(HighScoresStored));
-    createHighScores();
+    createHighscores();
 
     
 });
