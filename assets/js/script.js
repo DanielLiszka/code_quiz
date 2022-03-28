@@ -112,7 +112,7 @@ function createHighscores(){
     }
 }
 
-function replayQuiz(){
+function restartQuiz(){
     highscoreContainer.style.display = "none";
     gameoverDiv.style.display = "none";
     startQuizMain.style.display = "flex";
