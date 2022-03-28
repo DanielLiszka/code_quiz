@@ -1,3 +1,4 @@
+//global variables
 var finalQuestionIndex = quizQuestions.length;
 var currentQuestionIndex = 0;
 var timeLeft = 25;
@@ -5,6 +6,7 @@ var timerInterval;
 var score = 0;
 var correct;
 
+//html elements 
 var quizBody = document.getElementById("quiz");
 var resultsEl = document.getElementById("result");
 var finalScoreEl = document.getElementById("finalScore");
@@ -25,10 +27,10 @@ var buttonB = document.getElementById("second");
 var buttonC = document.getElementById("third");
 var buttonD = document.getElementById("fourth");
 
-function startQuiz(){
+function beginQuiz(){
     gameoverDiv.style.display = "none";
     startQuizMain.style.display = "none";
-    generateQuizQuestion();
+    cycleQuestion();
 
     timerInterval = setInterval(function() {
         timeLeft--;
@@ -42,7 +44,7 @@ function startQuiz(){
     quizBody.style.display = "block";
 }
 
-function generateQuizQuestion(){
+function cycleQuestion(){
     gameoverDiv.style.display = "none";
     if (currentQuestionIndex === finalQuestionIndex){
         return showScore();
@@ -71,7 +73,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
     
     HighScoresStored.push(currentHighscore);
     localStorage.setItem("HighScoresStored", JSON.stringify(HighScoresStored));
-    generateHighscores();
+    createHighScores();
 
     
 });
@@ -83,12 +85,12 @@ function confirmAnswer(answer){
         score++;
         alert("Correct!");
         currentQuestionIndex++;
-        generateQuizQuestion();
+        cycleQuestion();
     }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
         alert("Incorrect.")
         timeLeft = timeLeft - 3;
         currentQuestionIndex++;
-        generateQuizQuestion();
+        cycleQuestion();
     } else {
         showScore(); }
     if (timeLeft <= 0){
@@ -96,7 +98,7 @@ function confirmAnswer(answer){
     }
 }
 
-function generateHighscores(){
+function createHighscores(){
     highscoreDisplayName.innerHTML = "";
     highscoreDisplayScore.innerHTML = "";
     var highscores = JSON.parse(localStorage.getItem("HighScoresStored")) || [];
@@ -119,4 +121,4 @@ function replayQuiz(){
     currentQuestionIndex = 0;
 }
 
-startQuizButton.addEventListener("click",startQuiz);
+startQuizButton.addEventListener("click",beginQuiz);

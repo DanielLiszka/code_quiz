@@ -1,3 +1,4 @@
+//Question set
 var quizQuestions = [{
     question: "what html tag is NOT included in the HEAD tag?",
     choiceA: "meta",
